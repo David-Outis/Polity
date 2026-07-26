@@ -387,3 +387,17 @@ tabStudy.addEventListener("click", () => {
   resultsView.style.display = "none";
   studyView.style.display = "block";
 });
+
+/* ============================================================
+   MANUAL ROTATE-VIEW TOGGLE
+   Installed PWAs often ignore the device's rotation lock / the
+   manifest's orientation hint, so this flips the whole page 90°
+   with CSS as a manual "force landscape" switch.
+   ============================================================ */
+const rotateBtn = document.getElementById("rotateBtn");
+if (rotateBtn) {
+  rotateBtn.addEventListener("click", () => {
+    document.documentElement.classList.toggle("force-landscape");
+    window.scrollTo(0, 0);
+  });
+}

@@ -46,6 +46,28 @@
     min-height:100vh;
     -webkit-font-smoothing:antialiased;
   }
+  /* ---------- MANUAL ROTATE-VIEW TOGGLE ---------- */
+  .rotate-btn{
+    appearance:none; border:1px solid var(--grid-line-strong); background:var(--panel-raised);
+    color:var(--chalk); width:36px; height:36px; border-radius:10px; font-size:18px;
+    line-height:1; cursor:pointer; display:flex; align-items:center; justify-content:center;
+    flex-shrink:0; transition: transform 0.2s ease, border-color 0.2s ease;
+  }
+  .rotate-btn:hover{ border-color:var(--lime); color:var(--lime); }
+  .rotate-btn:active{ transform: scale(0.9); }
+  html.force-landscape{
+    overflow-x:hidden;
+  }
+  html.force-landscape body{
+    position:absolute;
+    top:0; left:100%;
+    width:100vh;
+    height:100vw;
+    transform-origin: top left;
+    transform: rotate(90deg);
+    overflow-x:hidden;
+    overflow-y:auto;
+  }
   .wrap{
     max-width: 760px;
     margin: 0 auto;
@@ -633,6 +655,7 @@
   <header class="hero">
     <div class="brand-row">
       <div class="brand">Polity Drillhouse<span class="dot">.</span></div>
+      <button class="rotate-btn" id="rotateBtn" type="button" aria-label="Rotate view to landscape" title="Rotate view">⟳</button>
     </div>
     <p class="tagline">MCQ speed drills on Articles, Parts, Schedules and borrowed features of the Indian Constitution — plus a full offline reference. Fresh questions every run.</p>
     <div class="ticker"><div class="ticker-track" id="tickerTrack"></div></div>

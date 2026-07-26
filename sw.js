@@ -1,4 +1,4 @@
-const CACHE_NAME = "polity-drillhouse-v2";
+const CACHE_NAME = "polity-drillhouse-v3";
 const ASSETS = [
   "./",
   "./index.html",
