@@ -553,13 +553,15 @@
     border-collapse:collapse;
     font-size: 13.5px;
     width:100%;
-    min-width: 480px;
+    table-layout: auto;
   }
 #studyView table.ref-table th, #studyView table.ref-table td{
     border:1px solid var(--grid-line-strong);
     padding: 9px 12px;
     text-align:left;
     vertical-align: top;
+    word-break: break-word;
+    overflow-wrap: anywhere;
   }
 #studyView table.ref-table th{
     background: var(--panel-raised);
@@ -589,6 +591,19 @@
 #studyView .back-top:hover{ color:var(--lime); }
 #studyView table.ref-table{ font-size:12.5px; }
 #studyView table.ref-table th, #studyView table.ref-table td{ padding:7px 8px; }
+#studyView table.ref-table th:first-child, #studyView table.ref-table td:first-child{
+  position: static;
+  background: transparent;
+  font-weight: inherit;
+  color: inherit;
+  text-align: left;
+}
+#studyView table.ref-table tr:nth-child(even) td:first-child{ background: rgba(60,50,40,0.02); }
+#studyView table.ref-table th:first-child{
+  background: var(--panel-raised);
+  color: var(--amber);
+  font-weight:700;
+}
 
   /* ---------- MCQ OPTIONS (Polity practice) ---------- */
   #optionsRow{ display:flex; flex-direction:column; gap:10px; margin-top:14px; }
